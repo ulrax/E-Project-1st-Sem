@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body {
+        /* background-image: url(https://marketplace.canva.com/EAGH3pOFp94/1/0/900w/canva-pink-illustration-watercolor-cake-background-instagram-story-4_MlxQPH-oo.jpg); */
+        background-color: black;
+    }
+
+
+
+    #theCakeH {
+        font-family: "Playfair Display", serif;
+        font-size: 40px;
+        color: #FFD700;
+    }
+
+    #pFirst {
+        font-family: "Playfair Display", serif;
+        font-size: 25px;
+        color: #ff21a3;
+    }
+
+    p {
+        margin-top: 20px;
+        font-family: "Cinzel", serif;
+        font-size: large;
+        color: #FFFFE0;
+
+    }
+
+    .cakeDisciption {
+        background-color: rgb(188, 114, 82);
+        border-radius: 15px;
+        border: 1px solid white;
+    }
+
+    .cakeDisciptionText {
+        padding-right: 15px;
+    }
+
+    .historyOfCake {
+        margin-top: 50px;
+        background-color: rgb(188, 114, 82);
+        border-radius: 21px;
+        border: 1px solid white;
+    }
+
+    .oldBakeryPhoto {
+        width: 70%;
+        height: 600px;
+        border-radius: 15px;
+        margin: 30px auto;
+    }
+
+
+    .historyP {
+        padding-top: 30px;
+        /* background-color: black; */
+        color: #FFFFE0;
+    }
+
+    .historyOfCakeText {
+        background-color: rgba(0, 0, 0, 0.700);
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .allinCakeDisciption {
+        background-color: rgba(0, 0, 0, 0.700);
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        padding: 30px;
+
+    }
+
+    /* .theCakeH {
+        background-color: black;
+    }*/
+
+    h3 {
+        color: #ff21a3;
+        font-family: "Playfair Display", serif;
+    }
+
+    .search-container {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 500px;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .search-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 25px;
+    }
+
+    .search-button {
+        background: #007bff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        color: white;
+        font-size: 16px;
+        transition: background 0.3s ease;
+    }
+
+    .search-button:hover {
+        background: #0056b3;
+    }
+
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        .search-container {
+            width: 95%;
+            bottom: 10px;
+        }
+
+        .search-input {
+            font-size: 14px;
+            padding: 8px 12px;
+        }
+
+        .search-button {
+            font-size: 14px;
+            padding: 8px 15px;
+        }
+
+    }
+
+    /* Bootstrap styling */
+    /* Styles for the stats section block */
+    .stats-section-block {
+        border-radius: 10px;
+        padding: 40px 20px;
+        /* Apply padding from the original .stats-section style */
+        margin-top: 40px;
+        /* Apply margin from the original .stats-section style */
+        color: white;
+        /* Keep text white as per original design */
+    }
+
+
+    .stats-section-block h4 {
+        /* Updated selector to target h4 inside the block */
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .why-choose {
+        padding: 60px 0;
+    }
+
+    .h3Color {
+        color: white;
+    }
+
+    h5 {
+        color: #ff21a3;
+    }
+
+    .feature-icon {
+        font-size: 40px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cake - Home</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- font awesome links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: black;">
+
+    <!-- navbar start -->
+    <div class="blurnav">
+        <nav class="navbar">
+            <a href="index.html" class="logoText">
+                <img src="images/logo-image.webp" alt="logo" class="logo">The Cake
+            </a>
+            <ul class="links">
+                <li><a href="index.html" id="activeLink">Home</a></li>
+                <li><a href="allProduct.html">Cakes</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Events Cake</a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="eventCakePages/wedding.html">Weddings</a></li>
+                        <li><a href="eventCakePages/birthday.html">Birthdays</a></li>
+                        <li><a href="eventCakePages/anniversery.html">Anniversaries</a></li>
+                        <li><a href="eventCakePages/engegment.html">Engagement</a></li>
+                    </ul>
+                </li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="sitemap.html">Site Map</a></li>
+                <li><a href="login&signup.html" class="action_btn">Login / SignUp</a></li>
+            </ul>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+    </div>
+    <ul class="dropdown_menu">
+        <li><a href="index.html" id="activeLink">Home</a></li>
+        <li><a href="allProduct.html">Cake</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Events Cake</a>
+            <ul class="dropdown-submenu">
+                <li><a href="eventCakePages/wedding.html">Weddings</a></li>
+                <li><a href="eventCakePages/birthday.html">Birthdays</a></li>
+                <li><a href="eventCakePages/anniversery.html">Anniversaries</a></li>
+                <li><a href="eventCakePages/engegment.html">Engagement</a></li>
+            </ul>
+        </li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="sitemap.html">Site Map</a></li>
+        <li><a href="login&signup.html" class="action_btn">Login / SignUp</a></li>
+    </ul>
+    <!-- navbar end -->
+
+    <!-- header start -->
+
+    <header class="header-main headerMain">
+        <div class="headerOverlay">
+            <p id="banner-text">One Slice is Never Enough Try Our Cakes!</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search cakes...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- header end -->
+
+    <!-- main start -->
+    <main class="main-bg">
+
+        <section class="cakeDisciption">
+
+            <div class="allinCakeDisciption">
+
+                <div class="cakeDisciptionText">
+
+                    <h2 id="theCakeH">The Cake Description:</h2>
+
+                    <p id="pFirst">Welcome to The Cakes!</p>
+
+                    <p>We’re so glad you found us. If you love cakes baking them, eating them, or just admiring them
+                        online you’re in the right place.</p>
+
+                    <p style="margin-bottom: 20px;">This isn’t some fancy bakery site where only pros belong. Whether
+                        you bake every weekend or just
+                        love a good slice now and then, this space is for everyone who has a soft spot for cake.
+                    </p>
+
+                    <li><a href="detailMore.html" class="action_btn bottonSpace">Read more...</a></li>
+
+
+                </div>
+
+                <img src="images/discriptionMainImage.jpg" alt="oldBakeryPhoto" class="oldBakeryPhoto">
+
+            </div>
+
+        </section>
+
+        <section class="historyOfCake">
+
+            <div class="historyOfCakeText">
+
+                <h2 id="theCakeH">History of Cake:</h2>
+
+                <div class="historyP">
+
+                    <h3>Ancient Beginnings (Pre-1000 BCE):</h3>
+
+                    <p class="pHistory">Cake like creations began in ancient Egypt around 2700 BCE as sweetened
+                        flatbreads made with honey, often used in rituals. Similar sweet breads appeared in Mesopotamia,
+                        enriched with dates and nuts, mainly for the elite.</p>
+
+                </div>
+
+                <div class="historyP" style="margin-bottom: 20px;">
+
+                    <h3>Greek and Roman Innovations (1000 BCE–400 CE):</h3>
+
+                    <p class="pHistory">The Greeks introduced richer cakes like plakous, made with flour, honey, nuts,
+                        and eggs. Romans adapted these into celebratory bakes like libum, a proto cheesecake used in
+                        religious offerings. Early layering and leavening techniques emerged during this era.</p>
+
+                </div>
+
+                <li><a href="detailMore2.html#linkS" class="action_btn bottonSpace">Read more...</a></li>
+
+            </div>
+
+        </section>
+
+        <!-- Stats Section -->
+        <div class="stats-section-block stats-bg-bluegreen">
+            <div class="container-fluid">
+                <div class="row text-center py-4">
+                    <div class="col-6 col-md-3 mb-3 mb-md-0">
+                        <h4 class="fw-bold" data-count="1200" data-label="happy-customers">0</h4>
+                        <p class="mb-0">Happy Customers</p>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3 mb-md-0">
+                        <h4 class="fw-bold" data-count="50" data-label="team-members">0</h4>
+                        <p class="mb-0">Team Members</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-bold" data-count="24" data-label="support">0</h4>
+                        <p class="mb-0">Support Available</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-bold" data-count="98" data-label="reviews">0</h4>
+                        <p class="mb-0">Positive Reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why to choose us Section -->
+        <div class="why-choose mt-5">
+            <div class="text-center mb-5">
+                <h3 class="fw-bold h3Color">Why You Choose US?</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">🚚</div>
+                    <h5>Next day delivery</h5>
+                    <p>We offer next day delivery service on a selection of our products, when ordered before 2:45pm.
+                        All our nationwide products require an extra day’s notice.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">💰</div>
+                    <h5>Quality With Affordability</h5>
+                    <p>Great taste doesn’t have to come at a high price. At The Cake, we believe everyone deserves a
+                        slice of happiness that’s why we offer delicious, high quality cakes at market competitive
+                        prices.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">📞</div>
+                    <h5>Available For Discussion</h5>
+                    <p>We’re just a call away! Have questions or need help choosing the perfect cake? Call us at
+                        0318-2672746 our team is available to guide you and make your celebration extra sweet.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info Row -->
+        <div class="row text-center border border-2 border-secondary mb-4 text-light">
+            <div class="col-md-3 py-3 border-end">
+                <strong>ONLINE ORDER QUERY</strong>
+            </div>
+            <div class="col-md-3 py-3 border-end">
+                Call - 0301-0180450
+            </div>
+            <div class="col-md-3 py-3 border-end">
+                WhatsApp - 0318-2672746
+            </div>
+            <div class="col-md-3 py-3">
+                Email - ulgamerplay@gmail.com
+            </div>
+        </div>
+
+        <div class="cart">
+            <a href="cartPage.html" class="cartLink"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer text-light">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <img src="images/logo-image.webp" class="footerLogo" alt="Cake Logo" width="50">
+                    <div class="brand mt-2">The Cake</div>
+                    <div class="copyright mt-3">
+                        <p>Copyright © 2025 The Cake. <br> All rights reserved.</p>
+                    </div>
+                    <div class="social-icons mt-2">
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="footerPages/blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="footerPages/pricing.html">Pricing</a></li>
+                        <li><a href="about-us.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="footerPages/helpcenter.html">Help center</a></li>
+                        <li><a href="footerPages/termsofservice.html">Terms of service</a></li>
+                        <li><a href="footerPages/legal.html">Legal</a></li>
+                        <li><a href="footerPages/privacypolicy.html">Privacy policy</a></li>
+                        <li><a href="footerPages/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <h5>Stay up to date</h5>
+                    <form class="d-flex mt-2">
+                        <input type="email" class="form-control me-2 newsletter-input" placeholder="Your email address">
+                        <button type="submit" class="btn newsletter-btn"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JS working for navbar -->
+    <script>
+
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+
+            toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        }
+
+    </script>
+    <!-- JS working end for navbar -->
+
+    <!-- JS for dropdown menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    submenu.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+
+    <!-- Add JavaScript for animation for status bar -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll("h4[data-count]");
+            let animated = false;
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute("data-count");
+                    const label = counter.getAttribute("data-label");
+
+                    const updateCount = () => {
+                        const current = +counter.innerText;
+                        const increment = Math.ceil(target / 200); // Speed factor
+
+                        if (current < target) {
+                            counter.innerText = current + increment;
+                            setTimeout(updateCount, 10);
+                        } else {
+                            counter.innerText = target;
+
+                            // Add symbol after reaching target
+                            if (label === "happy-customers" || label === "team-members") {
+                                counter.innerHTML = target + '+';
+                            } else if (label === "reviews") {
+                                counter.innerHTML = target + '%';
+                            }
+                            // No symbol for "support"
+                        }
+                    };
+
+                    updateCount();
+                });
+            };
+
+            // Intersection Observer Setup
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        animateCounters();
+                        observer.disconnect(); // Stop observing once animation starts
+                    }
+                });
+            }, {
+                threshold: 0.3 // Trigger when 30% of the section is visible
+            });
+
+            const statsSection = document.querySelector('.stats-section-block');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

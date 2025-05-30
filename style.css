@@ -1,0 +1,608 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Tagesschrift", system-ui;
+}
+
+body {
+    height: 100vh;
+    /* background-color: #e2e2e2ea; */
+    /* background-color: #192435; */
+    /* background-color: #7a7a7af5; */
+
+    color: rgb(0, 0, 0);
+    /* background-image: url(2117770-3840x2160-desktop-4k-dark-background.jpg);
+    background-size: cover;
+    background-position: center; */
+}
+
+/* navbar working start */
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+
+#activeLink {
+    color: rgb(218, 0, 134);
+}
+
+a:hover {
+    color: rgb(218, 0, 134);
+    transition: 0.3s;
+}
+
+
+
+/* header */
+
+.header-main {
+    background-image: url(images/homePageBanner.webp);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    border-radius: 0 0 30px 30px;
+    position: relative;
+}
+
+.headerOverlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 500px;
+    padding: 0 2rem;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#banner-text {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    text-align: center;
+    /* color: #e91e63; */
+    color: #fffffff9;
+    font-size: 2.7rem;
+    font-weight: bold;
+    padding: 0 20px;
+    border-left: 10px solid #e45c26;
+    border-right: 10px solid #e45c26;
+    border-radius: 50%;
+}
+
+/* Search Bar Styles */
+.search-container {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 448px;
+    background: rgba(255, 205, 205, 0.9);
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    background: transparent;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #000000;
+}
+
+.search-button {
+    background: #e91e63;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.search-button i {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+/* Animations and Transitions */
+.search-container:hover,
+.search-container:focus-within {
+    transform: translateX(-50%) translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.search-input:focus {
+    transform: scale(1.02);
+}
+
+.search-button:hover {
+    background: #0277bd;
+    transform: scale(1.05);
+}
+
+/* Pulse animation for button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.search-button {
+    animation: pulse 2s infinite;
+}
+
+.search-input:not(:placeholder-shown)+.search-button {
+    animation: none;
+}
+
+.blurnav {
+    backdrop-filter: blur(10px);
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.103);
+    width: 100%;
+    border-radius: 0px 0px 100px 100px;
+    border: 1px solid rgba(255, 255, 255, 0.856);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    height: 40px; /* Reduced size for better alignment */
+    border-radius: 50%;
+}
+
+.logoText {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(218, 0, 134);
+    margin-left: 30px;
+    padding-bottom: 20px;
+}
+
+.logoText img {
+    margin-right: 8px; /* Space between logo image and text */
+}
+
+.logoText:hover {
+    color: rgb(143, 0, 124);
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    position: relative; /* For toggle button positioning */
+}
+
+/* isko check karna hai */
+.navbar .logo a { 
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 1.5rem; /* Adjusted for tighter spacing */
+}
+
+.navbar .links li {
+    display: flex;
+    align-items: center;
+}
+
+/* event cake dropdown menu  */
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #292929d8;
+    border: 2px solid #b3008c;
+    box-shadow: 0 4px 8px rgba(218, 32, 255, 0.678);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    z-index: 1000;
+    border-radius: 20px;
+}
+
+.dropdown-submenu li {
+    padding: 10px 20px;
+}
+
+.dropdown-submenu li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-submenu li a:hover {
+    color: #ff00b3;
+}
+
+.dropdown:hover .dropdown-submenu {
+    display: block;
+}
+
+/* Chevron icon rotation */
+.fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* toggle button small screen main kaam aay ga, display none isi wja se kia hai */
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 50px; /* Align to the right */
+    top: 70%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+}
+
+.action_btn {
+    background-color: rgb(218, 0, 134);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2s ease, color 0.5s;
+    margin-right: 50px;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/* Dropdown menu for responsive  */
+
+.dropdown_menu {
+    /* display none sb hone ke baat kia hai. jb media query main kaam kare ge tw display block kar dege */
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 2rem;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+    position: fixed;
+    z-index: 999;
+}
+
+.dropdown_menu.open {
+    height: 380px;
+    border: 1px solid #b3008c;
+    border-radius: 10px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+/* navbar working end */
+
+/* main section start */
+.main-bg {
+    padding: 70px;
+    /* padding-top: 120px; */
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(99, 26, 2), black);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* cart working */
+.cart {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    top: 75%;
+    background-color: white;
+}
+
+.cartLink {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+    color: black;
+    font-size: xx-large;
+}
+
+.cart:hover {
+    background-color: black;
+}
+
+.cartLink:hover {
+    color: white;
+}
+
+/* main section end */
+
+/* footer working */
+
+.footer {
+      background-color: #140703;
+      padding: 40px 0;
+      font-family: Georgia, serif;
+    }
+
+    .footer p {
+      color: #ffc107;  
+    }
+
+    .footer h5 {
+      color: #ffc107;
+      font-weight: bold;
+    }
+    .footer a {
+      color: #ddd;
+      font-size: 16px;
+      text-decoration: none;
+      padding-top: 10px;
+    }
+    .footer a:hover {
+      color: #e91e63;
+      text-decoration: underline;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: bold;
+      color: #e91e63;
+    }
+    .copyright {
+      color: #ffc107;
+    }
+    .social-icons a {
+      color: #fff;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    .newsletter-input {
+      background-color: #e91e63;
+      border: none;
+      color: #fff;
+      width: 60%;
+    }
+
+    @media (max-width: 768px) {
+      .newsletter-input {
+        width: 100%;
+      }
+        
+    }
+
+    .newsletter-input::placeholder {
+      color: #fdd;
+    }
+    .newsletter-btn {
+      background-color: #ff00b3;
+      color: #fff;
+    }
+
+    .footerLogo {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-left: 30px;
+    }
+
+/* responsive styling */
+
+@media (max-width: 1020px) {
+
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    .headerMain {
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    .main-bg {
+        padding: 40px 50px 40px 50px;
+    }
+
+    .allinCakeDisciption {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .oldBakeryPhoto {
+        width: 70%;
+        border-radius: 20px;
+        margin: 0;
+        height: 100%;
+        margin-top: 20px;
+    }
+
+    /* .main-bg {
+        padding: ;
+    } */
+
+}
+
+@media (max-width: 567px) {
+    .oldBakeryPhoto {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1020px) {
+    .allinCakeDisciption {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .oldBakeryPhoto {
+        height: 300px;
+        width: 600px;
+
+    }
+    
+    /* .main-bg {
+        padding: ;
+    } */
+
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+
+    .main-bg {
+        padding: 40px 20px 40px 20px;
+    }
+
+}
+
+/* Mobile dropdown menu */
+@media (max-width: 768px) {
+    .dropdown-submenu {
+        position: relative;
+        box-shadow: none;
+        /* background: transparent; */
+        padding-left: 20px;
+        width: 100%;
+
+    }
+
+    .dropdown-submenu.show {
+        display: block;
+    }
+
+    #theCakeH {
+        font-size: xx-large;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .header-main,
+    .headerOverlay {
+        height: 400px;
+    }
+
+    #banner-text {
+        font-size: 2rem;
+        padding: 0 15px;
+        border-left: 8px solid #e45c26;
+        border-right: 8px solid #e45c26;
+    }
+
+    .search-container {
+        max-width: 90%;
+        bottom: 16px;
+    }
+
+    .search-input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .search-button {
+        padding: 10px 20px;
+    }
+
+    .search-button i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:1030px) {
+    .navbar .links {
+        gap: 1.5rem;
+    }
+    
+}

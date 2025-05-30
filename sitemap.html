@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cake - Site Map</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- font awesome links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url(images/black-background-with-focus-spot-light_1017-27230.avif);
+            background-size: cover;
+            /* background: linear-gradient(to bottom, #30058d, #4723e8); */
+            /* background-color: #0f3f6f; */
+            /* background-position: center; */
+            /* overflow-x: hidden; */
+            color: #333;
+            height: 100%;
+        }
+
+        .sitebackground {
+            /* background-color: rgba(0, 0, 0, 0.692); */
+            /* height: 100vh; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            padding-top: 150px;
+            /* padding-bottom: 150px; */
+        }
+
+        .container {
+            max-width: 1400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            /* color: #4a2c8b; */
+            color: #fff;
+            /* background-color: black; */
+            border-bottom: 2px solid rgb(255, 0, 191);
+            border-radius: 50%;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            font-weight: 600;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .sitemap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sitemap ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .sitemap li {
+            margin: 25px 0;
+            position: relative;
+            opacity: 0;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .sitemap li:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .sitemap li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .sitemap li:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .sitemap li:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .sitemap li:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .sitemap li:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .sitemap li:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .sitemap li:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .sitemap a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #3d3d3d, #999999);
+            border-radius: 50px;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 44, 139, 0.3);
+        }
+
+        .sitemap a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 44, 139, 0.5);
+            background: linear-gradient(45deg, #999999, #3d3d3d);
+        }
+
+        .main-nav {
+            /* background: rgba(255, 255, 255, 0.8); */
+            padding: 30px;
+            border: 1px solid white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 350px;
+            /* backdrop-filter: blur(5px); */
+            /* background-color: #F7374F; */
+            background: linear-gradient(15deg, black 40%, rgb(186, 77, 19));
+
+        }
+
+        .sub-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .sub-nav li {
+            margin: 15px 30px;
+            opacity: 0;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .sub-nav li:nth-child(1) {
+            animation-delay: 0.9s;
+        }
+
+        .sub-nav li:nth-child(2) {
+            animation-delay: 1.0s;
+        }
+
+        .sub-nav li:nth-child(3) {
+            animation-delay: 1.1s;
+        }
+
+        .sub-nav li:nth-child(4) {
+            animation-delay: 1.2s;
+        }
+
+        .sub-nav li a {
+            font-size: 16px;
+            padding: 10px 25px;
+            background: linear-gradient(45deg, #ff6666, #ff9999);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            color: black;
+        }
+
+        .sub-nav li a:hover {
+            background: linear-gradient(45deg, #ff8e53, #ff6b6b);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+        }
+
+        /* Lines for tree structure */
+        .sitemap li::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            width: 2px;
+            height: 0;
+            background: #4a2c8b;
+            animation: growLine 0.5s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .sitemap li:first-child::before {
+            display: none;
+        }
+
+        .sub-nav::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 2px;
+            height: 0;
+            background: #ff6b6b;
+            animation: growLine 0.5s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+        .sub-nav li::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            width: 2px;
+            height: 0;
+            background: #ff6b6b;
+            animation: growLine 0.5s ease-out forwards;
+            animation-delay: 1.3s;
+        }
+
+        .sub-nav li::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #ff6b6b;
+            transform: translateX(-50%);
+            animation: growHorizontalLine 0.5s ease-out forwards;
+            animation-delay: 1.3s;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes growLine {
+            from {
+                height: 0;
+            }
+
+            to {
+                height: 25px;
+            }
+        }
+
+        @keyframes growHorizontalLine {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 50%;
+            }
+        }
+
+        /* Responsive Design for screens wider than 768px */
+        @media (min-width: 769px) {
+            .main-nav {
+                max-width: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 25px;
+            }
+
+            .sitemap li {
+                margin: 15px 20px;
+                display: inline-block;
+            }
+
+            .sitemap li::before {
+                display: none;
+            }
+
+            .sub-nav {
+                margin-top: 15px;
+                margin-left: 0;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sub-nav li {
+                margin: 12px 0;
+            }
+
+            .sub-nav::before {
+                top: -15px;
+                height: 0;
+                animation: growLine 0.5s ease-out forwards;
+                animation-delay: 0.8s;
+            }
+
+            .sub-nav li::before {
+                top: -12px;
+                height: 0;
+                animation: growLine 0.5s ease-out forwards;
+                animation-delay: 1.3s;
+            }
+
+            .sub-nav li::after {
+                display: none;
+            }
+        }
+
+        /* Responsive Design for screens 768px or smaller */
+        @media (max-width: 768px) {
+            .main-nav {
+                max-width: 350px;
+            }
+
+            .sitemap li {
+                margin: 25px 0;
+            }
+
+            .main-container {
+                margin-top: 120px;
+            }
+
+            .sitebackground {
+                padding: 30px;
+                height: 100%;
+            }
+
+            .container {
+                padding: 30px;
+            }
+        }
+
+        footer {
+            background-color: rgb(28, 0, 0) !important;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- navbar start -->
+    <div class="blurnav">
+        <nav class="navbar">
+            <a href="index.html" class="logoText">
+                <img src="images/logo-image.webp" alt="logo" class="logo">The Cake
+            </a>
+            <ul class="links">
+
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="allProduct.html">Cakes</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Events Cake</a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="eventCakePages/wedding.html">Weddings</a></li>
+                        <li><a href="eventCakePages/birthday.html">Birthdays</a></li>
+                        <li><a href="eventCakePages/anniversery.html">Anniversaries</a></li>
+                        <li><a href="eventCakePages/engegment.html">Engagement</a></li>
+                    </ul>
+                </li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="sitemap.html" id="activeLink">Site Map</a></li>
+                <li><a href="login&signup.html" class="action_btn">Login / SignUp</a></li>
+            </ul>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+    </div>
+    <ul class="dropdown_menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="allProduct.html">Cake</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Events Cake</a>
+            <ul class="dropdown-submenu">
+                <li><a href="eventCakePages/wedding.html">Weddings</a></li>
+                <li><a href="eventCakePages/birthday.html">Birthdays</a></li>
+                <li><a href="eventCakePages/anniversery.html">Anniversaries</a></li>
+                <li><a href="eventCakePages/engegment.html">Engagement</a></li>
+            </ul>
+        </li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="sitemap.html" id="activeLink">Site Map</a></li>
+        <li><a href="login&signup.html" class="action_btn">Login / SignUp</a></li>
+    </ul>
+    <!-- navbar end -->
+
+    <div class="sitebackground">
+
+        <div class="main-container">
+
+            <div class="container">
+                <h1>Site Map - The Cake</h1>
+                <div class="sitemap">
+                    <ul class="main-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="allProduct.html">Cakes</a></li>
+                        <li>
+                            <a href="#">Events Cake</a>
+                            <ul class="sub-nav">
+                                <li><a href="eventCakePages/birthday.html">Birthday</a></li>
+                                <li><a href="eventCakePages/anniversery.html">Anniversary</a></li>
+                                <li><a href="eventCakePages/engegment.html">Engagement</a></li>
+                                <li><a href="eventCakePages/wedding.html">Marriage</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login&signup.html">Login & SignUp</a></li>
+                        <li><a href="sitemap.html">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart">
+            <a href="cartPage.html" class="cartLink"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-light">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <img src="images/logo-image.webp" class="footerLogo" alt="Cake Logo" width="50">
+                    <div class="brand mt-2">The Cake</div>
+                    <div class="copyright mt-3">
+                        <p>Copyright © 2025 The Cake. <br> All rights reserved.</p>
+                    </div>
+                    <div class="social-icons mt-2">
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="footerPages/blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="footerPages/pricing.html">Pricing</a></li>
+                        <li><a href="about-us.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="footerPages/helpcenter.html">Help center</a></li>
+                        <li><a href="footerPages/termsofservice.html">Terms of service</a></li>
+                        <li><a href="footerPages/legal.html">Legal</a></li>
+                        <li><a href="footerPages/privacypolicy.html">Privacy policy</a></li>
+                        <li><a href="footerPages/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <h5>Stay up to date</h5>
+                    <form class="d-flex mt-2">
+                        <input type="email" class="form-control me-2 newsletter-input" placeholder="Your email address">
+                        <button type="submit" class="btn newsletter-btn"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('.sitemap a');
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                console.log(`Navigating to ${this.getAttribute('href')}`);
+                // e.preventDefault(); // Uncomment if files don't exist
+            });
+        });
+    });
+</script>
+
+<!-- JS working for navbar -->
+<script>
+
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropDownMenu = document.querySelector('.dropdown_menu');
+
+    toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open');
+        const isOpen = dropDownMenu.classList.contains('open');
+
+        toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    }
+
+</script>
+<!-- JS working end for navbar -->
+
+<!-- JS for dropdown menu -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                const submenu = this.nextElementSibling;
+                submenu.classList.toggle('show');
+            });
+        });
+    });
+</script>
+
+</html>

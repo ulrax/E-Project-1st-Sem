@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cake - Login & Signup</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- font awesome links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: Arial, sans-serif; */
+        }
+
+        body {
+            /* background-color: #f5f5f5; */
+            background-image: url(images/Login&SignupPageBackground.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            /* min-height: 100vh;
+            padding: 20px; */
+        }
+
+        .main-container-in {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 72.9vh;
+            padding: 20px;
+        }
+
+        .Container {
+            max-width: 400px;
+            width: 100%;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-out;
+            margin-top: 110px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tab {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .tab button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: #f5f5f5;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #424eff;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .tab button.active::after,
+        .tab button:hover::after {
+            transform: translateX(0);
+        }
+
+        .tab button.active {
+            background: #4c7cff;
+            color: white;
+        }
+
+        .tab button:hover {
+            background: #212994;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .form-container {
+            display: none;
+            animation: slideIn 0.4s ease-out;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+            transform: scale(1.02);
+        }
+
+        .form-group input:focus+label,
+        .form-group input:not(:placeholder-shown)+label {
+            color: #3498db;
+            transform: translateY(-5px);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: #4c7cff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button[type="submit"]::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        button[type="submit"]:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        button[type="submit"]:hover {
+            background: #0011ff;
+            transform: translateY(-2px);
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 15px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 0.3s forwards;
+        }
+
+        .toggle-link a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-link a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        p {
+            color: white;
+        }
+
+        footer {
+            background-color: #050e1e !important;
+        }
+
+        .search-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    flex: 1;
+    background-color: #ffffff !important;
+    color: #000;
+}
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .Container {
+                padding: 20px;
+                margin-top: 130px;
+            }
+
+            .form-container h2 {
+                font-size: 1.5rem;
+            }
+
+            .tab button {
+                font-size: 0.9rem;
+            }
+
+            button[type="submit"] {
+                padding: 10px;
+            }
+        }
+        
+        .newsletter-btn {
+            width: 50px !important;
+            background-color: #e91e63 !important;
+        }
+
+    </style>
+
+    
+</head>
+
+<body>
+
+    <!-- navbar start -->
+<div class="blurnav">
+    <nav class="navbar">
+        <a href="index.html" class="logoText">
+                    <img src="images/logo-image.webp" alt="logo" class="logo">The Cake
+                </a>
+        <ul class="links">
+            
+           
+            <li><a href="index.html">Home</a></li>
+            <li><a href="allProduct.html">Cakes</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Events Cake</a>
+                <ul class="dropdown-submenu">
+                    <li><a href="eventCakePages/wedding.html">Weddings</a></li>
+                    <li><a href="eventCakePages/birthday.html">Birthdays</a></li>
+                    <li><a href="eventCakePages/anniversery.html">Anniversaries</a></li>
+                    <li><a href="eventCakePages/engegment.html">Engagement</a></li>
+                </ul>
+            </li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="sitemap.html">Site Map</a></li>
+            <li><a href="login&signup.html" class="action_btn">Login / SignUp</a></li>
+        </ul>
+        <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+</div>
+<ul class="dropdown_menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="allProduct.html">Cake</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Events Cake</a>
+        <ul class="dropdown-submenu">
+            <li><a href="eventCakePages/wedding.html">Weddings</a></li>
+            <li><a href="eventCakePages/birthday.html">Birthdays</a></li>
+            <li><a href="eventCakePages/anniversery.html">Anniversaries</a></li>
+            <li><a href="eventCakePages/engegment.html">Engagement</a></li>
+        </ul>
+    </li>
+    <li><a href="about-us.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="sitemap.html">Site Map</a></li>
+    <li><a href="login&signup.html" class="action_btn">Login / SignUp</a></li>
+</ul>
+<!-- navbar end -->
+
+<div class="main-container-in">
+    <div class="Container">
+        <div class="tab">
+            <button class="tab-btn active" onclick="showForm('login')">Login</button>
+            <button class="tab-btn" onclick="showForm('signup')">Signup</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login" class="form-container active">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <input type="email" id="login-email" name="email" placeholder="Your Email" required>
+                    <label for="login-email">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" name="password" placeholder="Your Password" required>
+                    <label for="login-password">Password</label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="toggle-link">
+                <p>Don't have an account? <a href="#" onclick="showForm('signup')">Sign Up</a></p>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup" class="form-container">
+            <h2>Signup</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="signup-name" name="name" placeholder="Your Name" required>
+                    <label for="signup-name">Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="signup-email" name="email" placeholder="Your Email" required>
+                    <label for="signup-email">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="signup-password" name="password" placeholder="Your Password" required>
+                    <label for="signup-password">Password</label>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="toggle-link">
+                <p>Already have an account? <a href="#" onclick="showForm('login')">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart">
+            <a href="cartPage.html" class="cartLink"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+
+</div>
+
+    <!-- Footer -->
+    <footer class="footer text-light">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <img src="images/logo-image.webp" class="footerLogo" alt="Cake Logo" width="50">
+                    <div class="brand mt-2">The Cake</div>
+                    <div class="copyright mt-3">
+                        <p>Copyright © 2025 The Cake. <br> All rights reserved.</p>
+                    </div>
+                    <div class="social-icons mt-2">
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="footerPages/blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="footerPages/pricing.html">Pricing</a></li>
+                        <li><a href="about-us.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="footerPages/helpcenter.html">Help center</a></li>
+                        <li><a href="footerPages/termsofservice.html">Terms of service</a></li>
+                        <li><a href="footerPages/legal.html">Legal</a></li>
+                        <li><a href="footerPages/privacypolicy.html">Privacy policy</a></li>
+                        <li><a href="footerPages/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <h5>Stay up to date</h5>
+                    <form class="d-flex mt-2">
+                        <input type="email" class="form-control me-2 newsletter-input" placeholder="Your email address">
+                        <button type="submit" class="btn newsletter-btn"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JS working for navbar -->
+    <script>
+
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+
+            toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        }
+
+    </script>
+    <!-- JS working end for navbar -->
+
+    <!-- JS for dropdown menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    submenu.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+
+
+    <!-- JS for login and signup form -->
+    <script>
+        function showForm(formId) {
+            // Hide all forms and deactivate all tabs
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected form and activate corresponding tab
+            document.getElementById(formId).classList.add('active');
+            document.querySelector(`.tab-btn[onclick="showForm('${formId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
