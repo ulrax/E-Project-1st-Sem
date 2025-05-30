@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Cake - Pricing</title>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: #333;
+   }
+
+    header {
+      background: linear-gradient(rgb(56, 26, 7),rgb(240, 183, 136));
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-container {
+      display: flex;
+      overflow-x: auto;
+      padding: 2rem 1rem;
+      gap: 1rem;
+      margin-left: 40px;
+    }
+
+    .pricing-card {
+      border: 1px solid black;
+      flex: 0 0 250px; /* fixed width */
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .pricing-card h2 {
+      color: #ff6f61;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 1rem 0;
+    }
+
+    
+
+    /* Optional scrollbar styling */
+    .pricing-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .pricing-container::-webkit-scrollbar-thumb {
+      background-color: #ffc1cc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cake Pricing</h1>
+    <p>Delicious cakes at sweet prices</p>
+  </header>
+
+  <main class="pricing-container">
+    <div class="pricing-card">
+      <h2>Chocolate Delight</h2>
+      <p class="price">$20</p>
+      <p>Rich chocolate cake with fudge layers and creamy ganache topping.</p>
+    </div>
+
+    <div class="pricing-card">
+      <h2>Vanilla Dream</h2>
+      <p class="price">$18</p>
+      <p>Classic vanilla cake with whipped cream and fresh berries.</p>
+    </div>
+
+    <div class="pricing-card">
+      <h2>Red Velvet</h2>
+      <p class="price">$22</p>
+      <p>Moist red velvet cake layered with smooth cream cheese frosting.</p>
+    </div>
+
+    <div class="pricing-card">
+      <h2>Custom Cake</h2>
+      <p class="price">Starting at $30</p>
+      <p>Choose your flavor, frosting, and design for special occasions.</p>
+    </div>
+  </main>
+
+ 
+
+</body>
+</html>
+

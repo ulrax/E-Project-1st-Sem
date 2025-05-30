@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cake - Anniversary Cakes</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <!-- bootstrap links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- font awesome links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="..\style.css">
+</head>
+
+<style>
+    .resolution {
+        height: 500px;
+    }
+
+    header {
+        background-color: black;
+    }
+
+    /* Card styling */
+    .cake-card {
+        transition: transform 0.3s;
+    }
+
+    .cake-card:hover {
+        transform: scale(1.05);
+    }
+
+    .cake-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .price {
+        color: #000000;
+        font-weight: bold;
+        font-size: 1.4em;
+        font-family: Poppins, Montserrat;
+        /* text-decoration: underline; */
+    }
+
+    .itemCode {
+        font-family: Poppins, Montserrat;
+        border-bottom: 1px solid gray;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+
+    .typeCake {
+        font-family: Oswald;
+        /* font-weight: bolder; */
+        font-size: 17px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 576px) {
+        .cake-card {
+            margin-bottom: 20px;
+        }
+
+        .resolution {
+            height: 400px;
+        }
+
+    }
+
+    /* card button gap styling */
+    .card-footer {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        /* Ensure minimum spacing between buttons */
+    }
+
+    /* Responsive adjustments for buttons */
+    @media (max-width: 768px) {
+        .card-footer {
+            gap: 8px;
+            /* Slightly smaller gap for 768px and below */
+        }
+
+        .card-footer .btn {
+            padding: 0.375rem 0.75rem;
+            /* Reduce padding for buttons */
+            font-size: 0.9rem;
+            /* Slightly smaller font size */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .card-footer {
+            gap: 6px;
+            /* Even smaller gap for very small screens */
+        }
+
+        .card-footer .btn {
+            padding: 0.25rem 0.5rem;
+            /* Further reduce padding */
+            font-size: 0.85rem;
+            /* Smaller font size */
+        }
+    }
+
+    .bgColor {
+        background-color: #d9d9d9;
+    }
+
+    .btnColor {
+        background-color: black;
+        color: white;
+    }
+
+    .btnColor2 {
+        background-color: #411a0e;
+        color: white;
+    }
+
+    .btnHover:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+    <!-- navbar start -->
+    <div class="blurnav">
+        <nav class="navbar">
+            <a href="../index.html" class="logoText">
+                <img src="../images/logo-image.webp" alt="logo" class="logo">The Cake
+            </a>
+            <ul class="links">
+                <!-- <li class="logo">
+                
+            </li> -->
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../allProduct.html">Cakes</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="activeLink">Events Cake</a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="wedding.html">Weddings</a></li>
+                        <li><a href="birthday.html">Birthdays</a></li>
+                        <li><a href="anniversery.html" id="activeLink">Anniversaries</a></li>
+                        <li><a href="engegment.html">Engagement</a></li>
+                    </ul>
+                </li>
+                <li><a href="../about-us.html">About Us</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../sitemap.html">Site Map</a></li>
+                <li><a href="../login&signup.html" class="action_btn">Login / SignUp</a></li>
+            </ul>
+            <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+    </div>
+    <ul class="dropdown_menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../allProduct.html" id="activeLink">Cake</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Events Cake</a>
+            <ul class="dropdown-submenu">
+                <li><a href="wedding.html">Weddings</a></li>
+                <li><a href="birthday.html">Birthdays</a></li>
+                <li><a href="anniversery.html">Anniversaries</a></li>
+                <li><a href="engegment.html">Engagement</a></li>
+            </ul>
+        </li>
+        <li><a href="../about-us.html">About Us</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+        <li><a href="../sitemap.html">Site Map</a></li>
+        <li><a href="../login&signup.html" class="action_btn">Login / SignUp</a></li>
+    </ul>
+    <!-- navbar end -->
+
+    <header>
+
+        <img src="../images/pageBanner/anniverrsaryBanner.jpg" alt="Los Angeles" class="d-block w-100 resolution">
+
+    </header>
+
+    <main class="main-bg">
+        <!-- Order Modal -->
+        <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-4 bg-warning">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="orderModalLabel">Cake Order Form</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="customerName" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="customerName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="customerPhone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="customerPhone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cakeType" class="form-label">Quantity</label>
+                                <select class="form-select" id="cakeType" required>
+                                    <option value="0">Choose...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Item Code:</label>
+                                <input type="text" class="form-control" id="message" maxlength="50" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Delivery Address</label>
+                                <textarea class="form-control" id="address" rows="1" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="deliveryDate" class="form-label">Delivery Date</label>
+                                <input type="date" class="form-control" id="deliveryDate" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Place Order</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Order modal End -->
+
+        <!-- Image Zoom Modal -->
+        <div class="modal fade" id="imageZoomModal" tabindex="-1" aria-labelledby="imageZoomModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body p-0">
+                        <img id="zoomedImage"
+                            src="https://www.indianhealthyrecipes.com/wp-content/uploads/2023/07/cake-without-eggs.jpg"
+                            alt="Zoomed Cake" class="img-fluid w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cake Cards -->
+        <div class="container my-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/1.webp" class="card-img-top"
+                            alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Bed Cake</h5>
+                            <p class="card-text m-0  text-center typeCake">Cartoonish cake bed for you anniversery.</p>
+                            <div class="typeCake  text-center">Label: 50% Eggless</div>
+                            <div class="price  text-center">Rs.2999</div>
+                            <div class="itemCode text-end">Item Code: #651VB</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/2.jpg"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Heart Cake</h5>
+                            <p class="card-text m-0  text-center typeCake">Heart cake in pink color, for anniversery</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.2999</div>
+                            <div class="itemCode text-end">Item Code: #AG128</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/3.webp"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Simple Hearts</h5>
+                            <p class="card-text m-0  text-center typeCake">Simple heart cake, Vinalla flover for anniversery.</p>
+                            <div class="typeCake  text-center">Label: 30% Eggless</div>
+                            <div class="price  text-center">Rs.1999</div>
+                            <div class="itemCode text-end">Item Code: #A1O28</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/4.webp"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Cuti Pie</h5>
+                            <p class="card-text m-0  text-center typeCake">Cuti pie cake is the best sell cake in 2024-25.</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.2299</div>
+                            <div class="itemCode text-end">Item Code: #X1728</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/5.jpg" class="card-img-top"
+                            alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Love Night</h5>
+                            <p class="card-text m-0  text-center typeCake">love night cake in chocolate & blueberry flover.</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.2699</div>
+                            <div class="itemCode text-end">Item Code: #A1C8</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/6.jpg"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">lovly Couple</h5>
+                            <p class="card-text m-0  text-center typeCake">lovly couple cake best for you wedding event.</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.2499</div>
+                            <div class="itemCode text-end">Item Code: #K028</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/7.jpg"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Rose Lover</h5>
+                            <p class="card-text m-0  text-center typeCake">Rose lover cake make to hard because its beautiful</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.2399</div>
+                            <div class="itemCode text-end">Item Code: #A8MR</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/8.webp"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Our Love</h5>
+                            <p class="card-text m-0  text-center typeCake">Our love cake demanding cake our platform, can you try this.</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.2499</div>
+                            <div class="itemCode text-end">Item Code: #F9316</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/9.webp" class="card-img-top"
+                            alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Hug Heart</h5>
+                            <p class="card-text m-0  text-center typeCake">Hug heart cake design is uniqe, rate please this cake.</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.1999</div>
+                            <div class="itemCode text-end">Item Code: #7Z28</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/10.jpg"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Model Cake</h5>
+                            <p class="card-text m-0  text-center typeCake">Model cake fully costumise 3D model & more.</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.3699</div>
+                            <div class="itemCode text-end">Item Code: #XXSR</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/11.webp"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Special Red</h5>
+                            <p class="card-text m-0  text-center typeCake">Special red cake inside full fill liquid chocolate.</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.3999</div>
+                            <div class="itemCode text-end">Item Code: #WR406</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="col">
+                    <div class="card cake-card shadow bgColor">
+                        <img src="../images/productImages/Anniversery cake images/12.webp"
+                            class="card-img-top" alt="Chocolate Cake">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Special Top</h5>
+                            <p class="card-text m-0  text-center typeCake">Special top cake are most like by people, flover to sweet.</p>
+                            <div class="typeCake  text-center">Label: 0% Eggless</div>
+                            <div class="price  text-center">Rs.3999</div>
+                            <div class="itemCode text-end">Item Code: #47RX8</div>
+                            <div class=" d-flex justify-content-around">
+                                <button type="button" class="btn btnColor btnHover" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">Order</button>
+                                <button type="button" class="btn btnColor2 view-btn btnHover">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="cart">
+            <a href="../cartPage.html" class="cartLink"><i class="fa-solid fa-cart-arrow-down"></i></a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-light">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <img src="../images/logo-image.webp" class="footerLogo" alt="Cake Logo" width="50">
+                    <div class="brand mt-2">The Cake</div>
+                    <div class="copyright mt-3">
+                        <p>Copyright © 2025 The Cake. <br> All rights reserved.</p>
+                    </div>
+                    <div class="social-icons mt-2">
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../about-us.html">About us</a></li>
+                        <li><a href="../footerPages/blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contact us</a></li>
+                        <li><a href="../footerPages/pricing.html">Pricing</a></li>
+                        <li><a href="../about-us.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../footerPages/helpcenter.html">Help center</a></li>
+                        <li><a href="../footerPages/termsofservice.html">Terms of service</a></li>
+                        <li><a href="../footerPages/legal.html">Legal</a></li>
+                        <li><a href="../footerPages/privacypolicy.html">Privacy policy</a></li>
+                        <li><a href="../footerPages/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <h5>Stay up to date</h5>
+                    <form class="d-flex mt-2">
+                        <input type="email" class="form-control me-2 newsletter-input" placeholder="Your email address">
+                        <button type="submit" class="btn newsletter-btn"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS for navbar -->
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+            toggleBtnIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        }
+    </script>
+    <!-- JS for dropdown menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    submenu.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+    <!-- JS for zooming images -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const viewButtons = document.querySelectorAll('.view-btn');
+
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Prevent event bubbling
+                    const card = this.closest('.card');
+                    const img = card.querySelector('img');
+                    const modalImg = document.getElementById('zoomedImage');
+                    modalImg.src = img.src;
+
+                    const modal = new bootstrap.Modal(document.getElementById('imageZoomModal'));
+                    modal.show();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
